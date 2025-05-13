@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive JS Assignment</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Interactive JavaScript Assignment</h1>
+    <!-- Button for Click Event -->
+    <button id="clickButton">Click Me</button>
 
-  <!-- Event Handling -->
-  <button id="clickButton">Click me!</button>
+    <!-- Button for Hover Event -->
+    <button id="hoverButton">Hover Over Me</button>
 
-  <!-- Image Gallery -->
-  <div id="imageGallery">
-    <img src="image1.jpg" alt="Image 1" />
-    <img src="image2.jpg" alt="Image 2" />
-    <img src="image3.jpg" alt="Image 3" />
-  </div>
+    <!-- Input Field for Keypress Detection -->
+    <input type="text" id="keypressInput" placeholder="Type something">
 
-  <!-- Tabs -->
-  <div class="tabs">
-    <div class="tab" data-tab="tab1">Tab 1</div>
-    <div class="tab" data-tab="tab2">Tab 2</div>
-    <div class="tab" data-tab="tab3">Tab 3</div>
-    <div class="content" id="tab1">Content for Tab 1</div>
-    <div class="content" id="tab2">Content for Tab 2</div>
-    <div class="content" id="tab3">Content for Tab 3</div>
-  </div>
+    <!-- Image Gallery -->
+    <div id="gallery">
+        <img src="https://via.placeholder.com/150" alt="image1">
+        <img src="https://via.placeholder.com/150" alt="image2">
+        <img src="https://via.placeholder.com/150" alt="image3">
+    </div>
 
-  <!-- Form Validation -->
-  <form id="userForm">
-    <input type="text" id="username" placeholder="Username" required />
-    <input type="email" id="email" placeholder="Email" required />
-    <input type="password" id="password" placeholder="Password" required />
-    <button type="submit">Submit</button>
-  </form>
-  <div id="formFeedback"></div>
+    <!-- Accordion -->
+    <div class="accordion">
+        <button class="accordion-btn">Section 1</button>
+        <div class="accordion-content">Content for Section 1</div>
+    </div>
 
-  <script src="script.js"></script>
+    <!-- Form for Validation -->
+    <form id="myForm">
+        <input type="text" id="requiredField" placeholder="Required Field" required>
+        <input type="email" id="emailField" placeholder="Email" required>
+        <input type="password" id="passwordField" placeholder="Password" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="script.js"></script>
 </body>
 </html>
