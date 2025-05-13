@@ -1,38 +1,28 @@
-/* Basic button styling */
+/* Basic styles for buttons and form */
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-#hoverButton:hover {
-    background-color: lightblue;
+button:hover {
+  background-color: lightblue;
 }
 
-#clickButton {
-    background-color: lightgreen;
+#image-gallery {
+  display: flex;
+  gap: 10px;
 }
 
-/* Gallery Styling */
-#gallery img {
-    margin: 10px;
-    width: 150px;
-    height: 150px;
+#image-gallery img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 
-/* Accordion styling */
-.accordion-content {
-    display: none;
-    background-color: lightgray;
-    padding: 10px;
-}
-
-.accordion-btn {
-    background-color: lightcoral;
-    padding: 10px;
-    width: 100%;
-}
-
-.accordion-btn:active {
-    background-color: lightgreen;
+#signup-form input {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
 }
