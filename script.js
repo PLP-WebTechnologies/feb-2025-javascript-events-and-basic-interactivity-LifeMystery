@@ -1,108 +1,82 @@
-// Event Handling: Button click, hover, and other events
-const button = document.getElementById("clickButton");
+// 1. Event Handling
 
-// Button click event
-button.addEventListener("click", () => {
-  alert("Button clicked!");
+// Button Click Event
+document.getElementById('clickButton').addEventListener('click', function() {
+    alert('Button clicked!');
 });
 
-// Hover effect
-button.addEventListener("mouseover", () => {
-  button.style.backgroundColor = "lightblue";
-});
-button.addEventListener("mouseout", () => {
-  button.style.backgroundColor = "";
+// Hover Effect on Button
+document.getElementById('hoverButton').addEventListener('mouseover', function() {
+    console.log('Hovered over button!');
 });
 
-// Keypress detection
-document.addEventListener("keypress", (event) => {
-  console.log(`Key pressed: ${event.key}`);
+// Keypress Detection
+document.getElementById('keypressInput').addEventListener('keypress', function(event) {
+    console.log('Key pressed:', event.key);
 });
 
-// Double-click event
-button.addEventListener("dblclick", () => {
-  alert("You double-clicked the button!");
+// Bonus: Double Click Action
+document.getElementById('clickButton').addEventListener('dblclick', function() {
+    alert('Double-clicked!');
 });
 
-// Long press detection
-let pressTimer;
-button.addEventListener("mousedown", () => {
-  pressTimer = setTimeout(() => {
-    alert("Long press detected!");
-  }, 1000); // 1 second long press
-});
-button.addEventListener("mouseup", () => {
-  clearTimeout(pressTimer);
+// 2. Interactive Elements
+
+// Change button color dynamically
+document.getElementById('clickButton').addEventListener('click', function() {
+    this.style.backgroundColor = 'blue'; // Change to blue on click
 });
 
-// Image gallery interaction
-const images = document.querySelectorAll("#imageGallery img");
-images.forEach((image) => {
-  image.addEventListener("click", () => {
-    alert(`You clicked on ${image.alt}`);
-  });
+// Image Gallery (Just a basic feature)
+const galleryImages = document.querySelectorAll('#gallery img');
+galleryImages.forEach(image => {
+    image.addEventListener('click', function() {
+        alert('You clicked an image!');
+    });
 });
 
-// Tabs functionality
-const tabs = document.querySelectorAll(".tab");
-const contents = document.querySelectorAll(".content");
-
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    contents.forEach((content) => content.classList.remove("active"));
-    document.getElementById(tab.dataset.tab).classList.add("active");
-  });
+// Accordion functionality
+const accordionButtons = document.querySelectorAll('.accordion-btn');
+accordionButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
 });
 
-// Form Validation
-const form = document.getElementById("userForm");
-const feedback = document.getElementById("formFeedback");
+// 3. Form Validation
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  
-  const username = document.getElementById("username").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+const form = document.getElementById('myForm');
 
-  // Check if fields are empty
-  if (!username || !email || !password) {
-    feedback.textContent = "Please fill in all fields!";
-    return;
-  }
-
-  // Email validation
-  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  if (!emailPattern.test(email)) {
-    feedback.textContent = "Please enter a valid email address!";
-    return;
-  }
-
-  // Password validation (min 8 characters)
-  if (password.length < 8) {
-    feedback.textContent = "Password must be at least 8 characters!";
-    return;
-  }
-
-  feedback.textContent = "Form submitted successfully!";
+// Real-time feedback while typing for email
+document.getElementById('emailField').addEventListener('input', function() {
+    const email = this.value;
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (emailValid) {
+        this.style.borderColor = 'green';
+    } else {
+        this.style.borderColor = 'red';
+    }
 });
 
-// Real-time feedback while typing (for email and password fields)
-const emailField = document.getElementById("email");
-const passwordField = document.getElementById("password");
-
-emailField.addEventListener("input", () => {
-  if (!emailPattern.test(emailField.value)) {
-    feedback.textContent = "Email is invalid!";
-  } else {
-    feedback.textContent = "";
-  }
+// Password validation (min length 8 characters)
+document.getElementById('passwordField').addEventListener('input', function() {
+    const password = this.value;
+    if (password.length >= 8) {
+        this.style.borderColor = 'green';
+    } else {
+        this.style.borderColor = 'red';
+    }
 });
 
-passwordField.addEventListener("input", () => {
-  if (passwordField.value.length < 8) {
-    feedback.textContent = "Password is too short!";
-  } else {
-    feedback.textContent = "";
-  }
+// Submit event for required fields check
+form.addEventListener('submit', function(event) {
+    const requiredField = document.getElementById('requiredField').value;
+    const emailField = document.getElementById('emailField').value;
+    const passwordField = document.getElementById('passwordField').value;
+
+    if (!requiredField || !emailField || !passwordField) {
+        alert('All fields are required!');
+        event.preventDefault(); // Prevent form submission
+    }
 });
