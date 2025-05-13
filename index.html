@@ -1,43 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Web Page</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Playground</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1>Welcome to the Ultimate JavaScript Playground 🎉</h1>
 
-    <!-- Button for Click Event -->
-    <button id="clickButton">Click Me</button>
+  <!-- Event Handling -->
+  <button id="click-btn">Click Me!</button>
+  <button id="hover-btn">Hover over me!</button>
 
-    <!-- Button for Hover Event -->
-    <button id="hoverButton">Hover Over Me</button>
+  <!-- Interactive Elements -->
+  <button id="color-btn">Change My Color</button>
+  <div id="image-gallery">
+    <img src="image1.jpg" alt="Image 1">
+    <img src="image2.jpg" alt="Image 2">
+    <img src="image3.jpg" alt="Image 3">
+  </div>
 
-    <!-- Input Field for Keypress Detection -->
-    <input type="text" id="keypressInput" placeholder="Type something">
+  <!-- Form Validation -->
+  <form id="signup-form">
+    <input type="text" id="name" placeholder="Enter your name" required>
+    <input type="email" id="email" placeholder="Enter your email" required>
+    <input type="password" id="password" placeholder="Enter your password" required>
+    <button type="submit">Submit</button>
+  </form>
 
-    <!-- Image Gallery -->
-    <div id="gallery">
-        <img src="https://via.placeholder.com/150" alt="image1">
-        <img src="https://via.placeholder.com/150" alt="image2">
-        <img src="https://via.placeholder.com/150" alt="image3">
-    </div>
-
-    <!-- Accordion -->
-    <div class="accordion">
-        <button class="accordion-btn">Section 1</button>
-        <div class="accordion-content">Content for Section 1</div>
-    </div>
-
-    <!-- Form for Validation -->
-    <form id="myForm">
-        <input type="text" id="requiredField" placeholder="Required Field" required>
-        <input type="email" id="emailField" placeholder="Email" required>
-        <input type="password" id="passwordField" placeholder="Password" required>
-        <button type="submit">Submit</button>
-    </form>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
